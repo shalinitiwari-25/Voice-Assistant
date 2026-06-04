@@ -2,14 +2,14 @@ import speech_recognition as sr
 import pyttsx3
 import datetime
 import sys
+import webbrowser
+
 
 def speak(text):
     print("Assistant:", text)
-    try:
-        
-        engine = pyttsx3.init()
-        
-        
+    engine = pyttsx3.init()
+    try:     
+
         voices = engine.getProperty('voices')
         if len(voices) > 1:
             engine.setProperty('voice', voices[1].id)  # Zira voice
@@ -49,11 +49,11 @@ def listen():
             print(f"Network error with Google API: {e}")
             return ""
             
-    except sr.MicrophoneError as e:
-        print(f"Microphone error: {e}")
+    except sr.WaitTimeoutError:
+        print("No speech detected or the microphone timed out.")
         return ""
-    except sr.RequestError as e:
-        print(f"API error: {e}")
+    except OSError as e:
+        print(f"Microphone unavailable: {e}")
         return ""
     except Exception as e:
         print(f"Unexpected error in listen(): {type(e).__name__}: {e}")
@@ -90,6 +90,15 @@ while True:
         speak("I don't have access to weather data right now, but I hope it's nice outside!")   
     elif "who are you" in command:
         speak("I am trivya, your voice assistant. I can tell you the time, date, and even a joke!")
+    elif "youtube" in command:
+        speak("opening Youtube")
+        webbrowser.open("https://www.youtube.com")
+    elif "google" in command:
+        speak("opening Google")
+        webbrowser.open("https://www.google.com")
+    elif "github" in command:
+        speak("opening Github")
+        webbrowser.open("https://www.github.com")
     elif "exit" in command:
         speak("Goodbye, nice to talk to you, Have a great day!")
         print("Voice Assistant Stopped")
