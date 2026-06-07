@@ -34,21 +34,11 @@ The assistant can recognize commands, respond with speech, provide useful inform
 
 ### Voice Assistant
 
-Add a screenshot of the terminal voice assistant running here.
-
-```text
-assets/voice_assistant.png
-```
+![Voice Assistant](assets/voice_assistant.png)
 
 ### Streamlit Interface
 
-Add a screenshot of the Streamlit web application here.
-
-```text
-assets/streamlit_interface.png
-```
-
----
+![Streamlit Interface](assets/streamlit_interface.png)
 
 ## Technologies Used
 
@@ -154,15 +144,6 @@ The assistant currently supports commands such as:
 
 ---
 
-## Screenshots
-
-### Voice Assistant
-
-![Voice Assistant](assets/voice_assistant.png)
-
-### Streamlit Interface
-
-![Streamlit Interface](assets/streamlit_interface.png)
 
 ## Architecture
 
