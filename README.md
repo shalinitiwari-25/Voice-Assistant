@@ -1,32 +1,23 @@
-# Trivya AI - Voice Assistant
+# Trivya AI 
 
-## Overview
+Trivya AI is a Python-based voice assistant that combines speech recognition, text-to-speech, and Google Gemini AI to provide an interactive assistant experience. Users can interact through both a terminal-based voice interface and a Streamlit-powered web interface.
 
-Trivya AI is a Python-based assistant that supports both voice and web interactions. The project combines speech recognition, text-to-speech technology, and a Streamlit-based interface to provide a simple and interactive user experience.
-
-The assistant can recognize commands, respond with speech, provide useful information such as the current date and time, open websites, and assist users through either voice or text-based interaction.
+The project can answer questions using AI, perform basic assistant tasks, open websites, and respond through voice output.
 
 ---
 
 ## Features
 
-### Voice Assistant Mode
-
-* Speech recognition using SpeechRecognition
-* Text-to-speech responses using pyttsx3
-* Current date and time queries
-* Greeting and conversational responses
-* Joke generation
-* Website navigation through voice commands
-* Google search support
-* Error handling for microphone and network issues
-
-### Web Interface Mode
-
-* Streamlit-based web application
-* Text-based interaction with the assistant
-* Conversation history display
-* Browser-friendly interface for quick testing and demonstrations
+- Voice recognition using SpeechRecognition
+- Text-to-speech responses using pyttsx3
+- AI-powered responses using Google Gemini
+- Streamlit-based web interface
+- Current date and time information
+- Website launching (Google, YouTube, GitHub)
+- Greetings and conversational responses
+- Joke generation
+- Environment variable security using .env
+- Error handling for microphone and network issues
 
 ---
 
@@ -40,6 +31,8 @@ The assistant can recognize commands, respond with speech, provide useful inform
 
 ![Streamlit Interface](assets/streamlit_interface.png)
 
+---
+
 ## Technologies Used
 
 * Python
@@ -49,23 +42,23 @@ The assistant can recognize commands, respond with speech, provide useful inform
 * pyttsx3
 * webbrowser
 * datetime
+* Google Gemini API
+* python-dotenv
 
 ---
 
 ## Project Structure
 
-```text
-Voice-Assistant/
+VoiceAssistant/
 │
-├── main.py              # Terminal-based voice assistant
-├── streamlit_app.py     # Streamlit web interface
-├── requirements.txt     # Project dependencies
+├── main.py
+├── streamlit_app.py
+├── ai_helper.py
+├── requirements.txt
 ├── README.md
 ├── .gitignore
-└── assets/              # Screenshots and media files
-```
-
----
+├── assets/
+└── .env (not included in repository)
 
 ## Installation
 
@@ -102,7 +95,13 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+### 5. Create a `.env` file
 
+Create a file named `.env` in the project root directory and add your Gemini API key:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
 ---
 
 ## Running the Project
@@ -127,23 +126,19 @@ streamlit run streamlit_app.py
 
 ## Example Commands
 
-The assistant currently supports commands such as:
-
-* Hello
-* How are you
-* What is your name
-* Who created you
-* What is the time
-* What is the date
-* Tell me a joke
-* Open YouTube
-* Open Google
-* Open GitHub
-* Python tutorial
-* Exit
+- Hello
+- What is your name?
+- What is the time?
+- What is the date?
+- Tell me a joke
+- Open YouTube
+- Open Google
+- Open GitHub
+- What is machine learning?
+- Who is Alan Turing?
+- Explain Python
 
 ---
-
 
 ## Architecture
 
@@ -166,14 +161,29 @@ Both interfaces provide similar assistant capabilities, allowing users to intera
 
 ---
 
-## Future Enhancements
+## Finish-Up-A-Thon Improvements
 
-* Browser microphone integration
-* Personalized user memory
-* AI-powered conversations
-* Dynamic command handling
-* External API integration
-* Cloud deployment
+This project originally started as a terminal-based voice assistant.
+
+During the GitHub Finish-Up-A-Thon, I improved the project by:
+
+- Adding a Streamlit web interface
+- Integrating Google Gemini AI
+- Securing API keys using environment variables
+- Improving project documentation
+- Adding screenshots and usage examples
+- Enhancing project structure and usability
+
+---
+
+## Future Improvements
+
+- Voice input support in the web interface
+- Weather and news integration
+- Multilingual support
+- Wake-word activation
+- Conversation memory
+- Cloud deployment
 
 ---
 

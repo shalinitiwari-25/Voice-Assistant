@@ -2,6 +2,8 @@ import streamlit as st
 import datetime
 import webbrowser
 
+from ai_helper import ask_ai
+
 st.set_page_config(page_title="Trivya AI ", page_icon="🎤")
 
 st.title("🎤 Trivya AI ")
@@ -48,7 +50,7 @@ def process_command(command):
         return "Goodbye!"
 
     else:
-        return "Sorry, I didn't understand that command."
+        return ask_ai(command)
 
 
 user_input = st.text_input("Ask trivya anything... ")

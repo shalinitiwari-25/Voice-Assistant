@@ -4,6 +4,7 @@ import datetime
 import sys
 import webbrowser
 
+from ai_helper import ask_ai
 
 def speak(text):
     print("Assistant:", text)
@@ -84,11 +85,7 @@ if __name__ == "__main__":
         elif "what is your name" in command:
             speak("My name is trivya, I am your voice assistant")
         elif "who created you" in command:
-            speak("I was created by Shalini")
-        elif "joke" in command:
-            speak("Why don't scientists trust atoms? Because they make up everything!")
-        elif "weather" in command:
-            speak("I don't have access to weather data right now, but I hope it's nice outside!")   
+            speak("I was created by Shalini")   
         elif "who are you" in command:
             speak("I am trivya, your voice assistant. I can tell you the time, date, and even a joke!")
         elif "python tutorial" in command:
@@ -109,7 +106,9 @@ if __name__ == "__main__":
             print("Voice Assistant Stopped")
             sys.exit(0)
         else:
-            speak("sorry, I didn't understand that command.")
+            response = ask_ai(command)
+            short_response = response[:250]
+            speak(response)
 
 
 
