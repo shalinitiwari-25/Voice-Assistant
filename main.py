@@ -12,7 +12,7 @@ def speak(text):
 
         voices = engine.getProperty('voices')
         if len(voices) > 1:
-            engine.setProperty('voice', voices[1].id)  # Zira voice
+            engine.setProperty('voice', voices[1].id) 
         elif voices:
             engine.setProperty('voice', voices[0].id)
         
@@ -58,55 +58,58 @@ def listen():
     except Exception as e:
         print(f"Unexpected error in listen(): {type(e).__name__}: {e}")
         return ""
+if __name__ == "__main__":
 
-speak("Voice Assistant Started")
+    speak("Voice Assistant Started")
 
-while True:
+    while True:
 
-    command = listen()
+        command = listen()
     
-    if not command:  
-        continue
+        if not command:  
+            continue
 
-    if "hello" in command:
-        speak("Hello Shalini")
+        if "hello" in command:
+            speak("Hello, ask me anything! I can tell you the time, date, or even a joke!")
 
-    elif "time" in command:
-        current_time = datetime.datetime.now().strftime("%I:%M %p")
-        speak(f"The time is {current_time}")
+        elif "time" in command:
+            current_time = datetime.datetime.now().strftime("%I:%M %p")
+            speak(f"The time is {current_time}")
 
-    elif "date" in command:
-        current_date = datetime.datetime.now().strftime("%d %B %Y")
-        speak(f"Today is {current_date}")
-    elif "how are you" in command:
-        speak("I am doing well, thankyou for asking, how are you?")
-    elif "what is your name" in command:
-        speak("My name is trivya, I am your voice assistant")
-    elif "who created you" in command:
-        speak("I was created by Shalini")
-    elif "joke" in command:
-        speak("Why don't scientists trust atoms? Because they make up everything!")
-    elif "weather" in command:
-        speak("I don't have access to weather data right now, but I hope it's nice outside!")   
-    elif "who are you" in command:
-        speak("I am trivya, your voice assistant. I can tell you the time, date, and even a joke!")
-    elif "python tutorial" in command:
-        speak("opening python tutorial")
-        query = command.replace(" ", "+")
-        webbrowser.open("https://www.google.com/search?q=" + query)
-    elif "youtube" in command:
-        speak("opening Youtube")
-        webbrowser.open("https://www.youtube.com")
-    elif "google" in command:
-        speak("opening Google")
-        webbrowser.open("https://www.google.com")
-    elif "github" in command:
-        speak("opening Github")
-        webbrowser.open("https://www.github.com")
-    elif "exit" in command:
-        speak("Goodbye, nice to talk to you, Have a great day!")
-        print("Voice Assistant Stopped")
-        sys.exit(0)
+        elif "date" in command:
+            current_date = datetime.datetime.now().strftime("%d %B %Y")
+            speak(f"Today is {current_date}")
+        elif "how are you" in command:
+            speak("I am doing well, thankyou for asking, how are you?")
+        elif "what is your name" in command:
+            speak("My name is trivya, I am your voice assistant")
+        elif "who created you" in command:
+            speak("I was created by Shalini")
+        elif "joke" in command:
+            speak("Why don't scientists trust atoms? Because they make up everything!")
+        elif "weather" in command:
+            speak("I don't have access to weather data right now, but I hope it's nice outside!")   
+        elif "who are you" in command:
+            speak("I am trivya, your voice assistant. I can tell you the time, date, and even a joke!")
+        elif "python tutorial" in command:
+            speak("opening python tutorial")
+            query = command.replace(" ", "+")
+            webbrowser.open("https://www.google.com/search?q=" + query)
+        elif "youtube" in command:
+            speak("opening Youtube")
+            webbrowser.open("https://www.youtube.com")
+        elif "google" in command:
+            speak("opening Google")
+            webbrowser.open("https://www.google.com")
+        elif "github" in command:
+            speak("opening Github")
+            webbrowser.open("https://www.github.com")
+        elif "exit" in command:
+            speak("Goodbye, nice to talk to you, Have a great day!")
+            print("Voice Assistant Stopped")
+            sys.exit(0)
+        else:
+            speak("sorry, I didn't understand that command.")
 
 
 
